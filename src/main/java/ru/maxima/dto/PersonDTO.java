@@ -18,6 +18,12 @@ public class PersonDTO {
     @Size(min = 2, max = 50, message = "Lenght of name should be min 2 symbols, max 50 symbols")
     private String name;
 
+    @Min(value = 2, message = "Lenght of username should be min 2 symbols")
+    private String username;
+
+    @Min(value = 2, message = "Lenght of username should be min 2 symbols")
+    private String password;
+
     @Min(value = 0, message = "Age should be min 0 year")
     private int age;
 

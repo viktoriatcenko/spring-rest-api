@@ -1,5 +1,6 @@
 package ru.maxima.models;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Min;
@@ -39,6 +40,7 @@ public class Person {
 
     @OneToMany(mappedBy = "owner", fetch = FetchType.EAGER)
     @Cascade(org.hibernate.annotations.CascadeType.REMOVE)
+    @JsonManagedReference
     private List<Order> orders;
 
     @Column(name = "admin")

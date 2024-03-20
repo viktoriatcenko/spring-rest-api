@@ -61,10 +61,8 @@ public class PeopleController {
                                              BindingResult bindingResult) {
         checkErrors(bindingResult);
 
-        Person updatedPerson = peopleService.findById(id);
-        peopleService.update(id, updatedPerson);
+        peopleService.update(id, person);
 
-        peopleService.save(person);
         return ResponseEntity.ok(HttpStatus.OK);
     }
 

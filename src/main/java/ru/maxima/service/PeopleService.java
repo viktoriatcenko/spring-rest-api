@@ -44,8 +44,11 @@ public class PeopleService {
 
     @Transactional
     public void update(Long id, Person editedPerson) {
-        editedPerson.setId(id);
-        repository.save(editedPerson);
+        Person person = findById(id);
+        person.setName(editedPerson.getName());
+        person.setEmail(editedPerson.getEmail());
+        person.setAge(editedPerson.getAge());
+        repository.save(person);
     }
 
     @Transactional
